@@ -1,20 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AJAX Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
+
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  <header>
+  <header class="heading">
+    <div class="container">
+      <div class="row">
+        <div class="column-full">
+          <nav class="nav-bar">
+            <img
+              src="https://cdn-icons.flaticon.com/png/512/3692/premium/3692931.png?token=exp=1641284216~hmac=18bc7c43c6a25abe6634da0d5602a6ca"
+              alt="chef">
+            <h1 class="heading-text">yumz</h1>
+            <div class="nav-item" data-view="favorites"></div>
+          </nav>
+        </div>
+      </div>
+    </div>
   </header>
+  <div class="heading-background">
+    <div class="container">
+      <div data-view="search-page" class="view">
+        <div class="row">
+          <div class="column-full">
+            <div class="top-header">
+              <h2 class="search-page-text">What do you want
+                to make today?</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full">
+            <div class="search-box">
+              <label for="search-text"></label>
+            </div>
+            <div class="search-box-input">
+              <input required name="search-box-input" type="text" id="search-text" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full">
+            <button type="submit" class="button submit-btn">SUBMIT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <main>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
