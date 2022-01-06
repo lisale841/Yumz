@@ -27,7 +27,7 @@
           <nav class="nav-bar">
             <img
               src="https://cdn-icons.flaticon.com/png/512/3692/premium/3692931.png?token=exp=1641284216~hmac=18bc7c43c6a25abe6634da0d5602a6ca"
-              alt="chef">
+              alt="chef" class="logo">
             <h1 class="heading-text">yumz</h1>
             <div class="nav-item" data-view="favorites"></div>
           </nav>
@@ -35,9 +35,9 @@
       </div>
     </div>
   </header>
-  <div class="heading-background">
+  <div class="heading-background" data-view="search-page">
     <div class="container">
-      <div data-view="search-page" class="view">
+      <div class="view">
         <div class="row">
           <div class="column-full">
             <div class="top-header">
@@ -64,6 +64,29 @@
       </div>
     </div>
   </div>
+  <div data-view="recipes" class="recipe-view hidden">
+    <div class="container">
+      <div data-view="list-entry" class="view">
+        <div class="container">
+          <div class="row">
+            <div class="column-full">
+              <div class="top-header">
+                <h2 class="title-entry-form">Recipe List</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-view="recipes">
+        <div class="container">
+          <div class="card-container">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <main>
   </main>
   <script src="js/data.js"></script>

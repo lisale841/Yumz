@@ -61,13 +61,18 @@ label {
   margin-top: 10px;
 }
 
-img {
+.logo {
   width: 100%;
+}
+
+.image-recipe {
+  height: 100%;
+  width: 90px;
 }
 
 input {
   width: 100%;
-  height: 7vh;
+  height: 5vh;
   border: solid lightgray 1px;
   border-radius: 3px;
   margin-top: 20px;
@@ -81,6 +86,75 @@ input:focus {
 h1 {
   font-weight: 100;
   font-size: 30px;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 5px;
+}
+
+.recipe-list {
+  border: solid;
+  border-color: lightgray;
+  border-radius: 10px;
+  border-width: 1px;
+  overflow: hidden;
+  display: inline-flex;
+  margin-bottom: 10px;
+  height: 65px;
+  width: 100%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+}
+
+.recipe-photo {
+  width: 100px;
+  overflow: hidden;
+}
+
+.recipe-title {
+  width: 50%;
+}
+
+.recipe-para {
+  font-size: 10px;
+  padding-top: 15px;
+  color: #208bff;
+}
+
+@media only screen and (min-width: 575px) {
+  .recipe-list {
+    width: 24%;
+    display: unset;
+    height: unset;
+  }
+
+  .image-recipe {
+    height: unset;
+    width: 100%;
+    position: unset;
+  }
+
+  .recipe-photo {
+    width: 114px;
+    height: 70px;
+  }
+
+  .recipe-title {
+    width: unset;
+  }
+
+  .recipe-para {
+    font-size: 10px;
+    color: #208bff;
+    padding: unset;
+    padding-left: 5px;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 .nav-bar {
