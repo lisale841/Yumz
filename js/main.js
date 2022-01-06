@@ -3,8 +3,6 @@ var $submitButton = document.querySelector('.submit-btn');
 var $headingBackground = document.querySelector('.heading-background');
 var $cardContainer = document.querySelector('.card-container');
 var $recipeView = document.querySelector('.recipe-view');
-// var $recipeList = document.querySelectorAll('.recipe-list');
-var $recipeContainer = document.querySelector('.card-container');
 
 function submitInput(event) {
 
@@ -65,11 +63,11 @@ function dataEntry(name, image, id) {
 }
 
 function getRecipe(event) {
-  var id = event.target.dataset.id;
+  var detailedId = event.target.dataset.id;
 
   var xhr = new XMLHttpRequest();
 
-  xhr.open('GET', 'https://tasty.p.rapidapi.com/recipes/detail?id=' + id);
+  xhr.open('GET', 'https://tasty.p.rapidapi.com/recipes/detail?id=' + detailedId);
   xhr.setRequestHeader('x-rapidapi-host', 'tasty.p.rapidapi.com');
   xhr.setRequestHeader('x-rapidapi-key', 'fc76fe0d21mshcb71b3e0899c0c9p1ba386jsn57a74a4f882a');
   xhr.responseType = 'json';
@@ -78,5 +76,3 @@ function getRecipe(event) {
   });
   xhr.send();
 }
-
-$recipeContainer.addEventListener('click', getRecipe);
