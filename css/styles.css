@@ -126,13 +126,11 @@ h1 {
   .recipe-list {
     width: 24%;
     display: unset;
-    height: unset;
+    height: 120px;
   }
 
   .image-recipe {
-    height: unset;
-    width: 100%;
-    position: unset;
+    width: 120px;
   }
 
   .recipe-photo {
