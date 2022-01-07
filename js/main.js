@@ -3,6 +3,12 @@ var $submitButton = document.querySelector('.submit-btn');
 var $headingBackground = document.querySelector('.heading-background');
 var $cardContainer = document.querySelector('.card-container');
 var $recipeView = document.querySelector('.recipe-view');
+// var $recipeDetailsContainer = document.querySelector('.recipe-details-container');
+var $recipeIngredients = document.getElementById('recipe-ingredients');
+var $recipeInstructions = document.getElementById('recipe-instructions');
+var $recipeTitle = document.querySelector('.recipe-details-title');
+var $recipeImage = document.querySelector('.recipe-details-photo');
+var $recipeDetailView = document.querySelector('.detail-view');
 
 function submitInput(event) {
 
@@ -73,6 +79,22 @@ function getRecipe(event) {
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
 
+    $recipeTitle.textContent = xhr.response.name;
+    $recipeImage.setAttribute('src', xhr.response.thumbnail_url);
+
+    for (var i = 0; i <= xhr.response.sections[0].components.length - 1; i++) {
+      var $li = document.createElement('li');
+      $li.textContent = xhr.response.sections[0].components[i].raw_text;
+      $recipeIngredients.appendChild($li);
+    }
+    for (var k = 0; k <= xhr.response.instructions.length - 1; k++) {
+      var $instructions = document.createElement('li');
+      $instructions.textContent = xhr.response.instructions[k].display_text;
+      $recipeInstructions.appendChild($instructions);
+    }
+
   });
   xhr.send();
+  $recipeView.setAttribute('class', 'recipe-view hidden');
+  $recipeDetailView.setAttribute('class', 'detail-view');
 }

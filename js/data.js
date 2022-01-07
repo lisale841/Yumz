@@ -1,5 +1,6 @@
 /* exported data */
 var data = {
-  view: 'search-page'
+  view: 'search-page',
+  favorites: []
 
 };

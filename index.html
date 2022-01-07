@@ -66,26 +66,58 @@
   </div>
   <div data-view="recipes" class="recipe-view hidden">
     <div class="container">
-      <div data-view="list-entry" class="view">
-        <div class="container">
-          <div class="row">
-            <div class="column-full">
-              <div class="top-header">
-                <h2 class="title-entry-form">Recipe List</h2>
-              </div>
-            </div>
+      <div class="row">
+        <div class="column-full">
+          <div class="top-header">
+            <h2 class="title-entry-form">Recipe List</h2>
           </div>
         </div>
       </div>
-      <div data-view="recipes">
+
+      <div data-view="recipes-list-items">
         <div class="container">
           <div class="card-container">
-
+            <!-- Recipe list items appended here -->
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div data-view="recipe-details" class="detail-view hidden">
+    <div class="container">
+      <div class="recipe-details-container">
+        <div class="row">
+          <div class="column-full">
+            <h2 class="recipe-details-title">Chicken Noodle Soup</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full">
+            <img
+              src="https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/df8ca9456fba431ca6e03170ddb827c0.jpeg"
+              alt="chicken-soup" class="recipe-details-photo">
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full">
+            <h3>Ingredients:</h3>
+            <ul id="recipe-ingredients">
+
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full">
+            <h3>Instructions:</h3>
+            <ol id="recipe-instructions">
+
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <main>
   </main>
