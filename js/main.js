@@ -7,10 +7,11 @@ var $recipeTitle = document.querySelector('.recipe-details-title');
 var $recipeImage = document.querySelector('.recipe-details-photo');
 var $logo = document.querySelector('.logo');
 var $view = document.querySelectorAll('.view');
-// var $favoritesButton = document.querySelector('.favorites-btn');
+var $favoritesButton = document.querySelector('.favorites-btn');
+var $noFavorites = document.querySelector('.no-favorites');
+var $navItem = document.querySelector('.nav-item');
 
 function homePage(event) {
-
   swapView(event);
 
   $searchInput.value = '';
@@ -140,11 +141,20 @@ function swapView(event) {
     }
     data.view = viewer;
   }
+  if (data.favorites.length > 0) {
+    $noFavorites.className = 'no-favorites hidden';
+
+  }
 }
 
-// function addToFavorites() {
-//   data.favorites.unshift(entry);
+function addToFavorites() {
+  swapView(event);
+}
 
-// }
+$favoritesButton.addEventListener('click', addToFavorites);
 
-// $favoritesButton.addEventListener('click', addToFavorites);
+function viewFavorites() {
+  swapView(event);
+}
+
+$navItem.addEventListener('click', viewFavorites);
