@@ -46,6 +46,15 @@ body {
   margin-top: 15px;
 }
 
+.favorites-btn {
+  float: right;
+  width: 100px;
+  padding: 11px 14px;
+  margin-top: 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
 label {
   font-size: 15px;
   font-weight: bold;
@@ -63,6 +72,7 @@ label {
 
 .logo {
   width: 100%;
+  cursor: pointer;
 }
 
 .image-recipe {
@@ -162,9 +172,12 @@ li {
 }
 
 .nav-bar .nav-item {
-  margin-left: 15px;
   cursor: pointer;
   font-size: 14px;
+  align-self: end;
+  font-family: Roboto, sans-serif;
+  margin: 10px;
+  margin-left: 75px;
 }
 
 .top-header {

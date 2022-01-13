@@ -7,6 +7,7 @@ var $recipeTitle = document.querySelector('.recipe-details-title');
 var $recipeImage = document.querySelector('.recipe-details-photo');
 var $logo = document.querySelector('.logo');
 var $view = document.querySelectorAll('.view');
+// var $favoritesButton = document.querySelector('.favorites-btn');
 
 function homePage(event) {
 
@@ -125,8 +126,9 @@ function swapView(event) {
   var viewer;
   if (event) {
     viewer = event.currentTarget.getAttribute('data-view');
+  } else {
+    viewer = data.view;
   }
-
   if (viewer) {
     for (var i = 0; i < $view.length; i++) {
       if ($view[i].getAttribute('data-view') === viewer) {
@@ -135,7 +137,14 @@ function swapView(event) {
       } else {
         $view[i].className = 'view hidden';
       }
-
     }
+    data.view = viewer;
   }
 }
+
+// function addToFavorites() {
+//   data.favorites.unshift(entry);
+
+// }
+
+// $favoritesButton.addEventListener('click', addToFavorites);
