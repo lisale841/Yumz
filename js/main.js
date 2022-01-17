@@ -10,6 +10,7 @@ var $view = document.querySelectorAll('.view');
 var $favoritesButton = document.querySelector('.favorites-btn');
 var $noFavorites = document.querySelector('.no-favorites');
 var $navItem = document.querySelector('.nav-item');
+var $cardContainerFavorites = document.querySelector('.card-container-favorites');
 
 function homePage(event) {
   swapView(event);
@@ -111,6 +112,7 @@ function getRecipe(event) {
       $recipeInstructions.appendChild($instructions);
     }
 
+    data.currentRecipe = xhr.response;
   });
   xhr.send();
 
@@ -121,6 +123,23 @@ function deleteLi(elementParent) {
   while (elementParent.firstChild) {
     elementParent.removeChild(elementParent.firstChild);
   }
+}
+
+function addIngredients(elementParent) {
+  for (var i = 0; i <= data.currentRecipe.sections[0].components.length - 1; i++) {
+    var $li = document.createElement('li');
+    $li.textContent = data.currentRecipe.sections[0].components[i].raw_text;
+    elementParent.appendChild($li);
+  }
+}
+
+function addInstructions(elementParent) {
+  for (var k = 0; k <= data.currentRecipe.instructions.length - 1; k++) {
+    var $instructions = document.createElement('li');
+    $instructions.textContent = data.currentRecipe.instructions[k].display_text;
+    elementParent.appendChild($instructions);
+  }
+
 }
 
 function swapView(event) {
@@ -147,14 +166,46 @@ function swapView(event) {
   }
 }
 
+function favorites(element) {
+  for (var i = 0; i <= data.favorites.length - 1; i++) {
+    var responseName = data.favorites[i].name;
+    var imageUrl = data.favorites[i].thumbnail_url;
+    var id = data.favorites[i].id;
+    var entry = dataEntry(responseName, imageUrl, id);
+    entry.addEventListener('click', getRecipe);
+    element.appendChild(entry);
+  }
+}
+
 function addToFavorites() {
+  data.favorites.push(data.currentRecipe);
+  deleteLi($cardContainerFavorites);
+
+  favorites($cardContainerFavorites);
+
   swapView(event);
 }
 
 $favoritesButton.addEventListener('click', addToFavorites);
 
 function viewFavorites() {
+  deleteLi($cardContainerFavorites);
+  favorites($cardContainerFavorites);
   swapView(event);
 }
 
 $navItem.addEventListener('click', viewFavorites);
+
+function onLoad() {
+  if (data.view === 'recipe-details') {
+    $recipeTitle.textContent = data.currentRecipe.name;
+    $recipeImage.setAttribute('src', data.currentRecipe.thumbnail_url);
+
+    addIngredients($recipeIngredients);
+    addInstructions($recipeInstructions);
+  } else if (data.view === 'favorites') {
+    favorites($cardContainerFavorites);
+  }
+  swapView();
+}
+window.addEventListener('DOMContentLoaded', onLoad);

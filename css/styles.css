@@ -104,6 +104,12 @@ h1 {
   gap: 5px;
 }
 
+.card-container-favorites {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 5px;
+}
+
 .recipe-list {
   border: solid;
   border-color: lightgray;

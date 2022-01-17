@@ -2,6 +2,7 @@
 var data = {
   view: 'search-page',
   favorites: [],
+  currentRecipe: null,
   editing: null
 
 };
