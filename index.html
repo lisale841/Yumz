@@ -25,11 +25,9 @@
       <div class="row">
         <div class="column-full">
           <nav class="nav-bar">
-            <img
-              src="images/chef logo.png"
-              alt="chef" class="logo" data-view="search-page">
+            <img src="images/chef logo.png" alt="chef" class="logo" data-view="search-page">
             <h1 class="heading-text">yumz</h1>
-            <div class="nav-item" data-view="favorites"></div>
+            <div class="nav-item" data-view="favorites">FAVORITES</div>
           </nav>
         </div>
       </div>
@@ -84,7 +82,7 @@
       </div>
     </div>
   </div>
-  <div data-view="recipe-details" class="view hidden" >
+  <div data-view="recipe-details" class="view hidden">
     <div class="container">
       <div class="recipe-details-container">
         <div class="row">
@@ -113,6 +111,28 @@
             <ol id="recipe-instructions">
 
             </ol>
+          </div>
+        </div>
+        <button type="button" class="button favorites-btn" data-view="favorites">FAVORITES</button>
+      </div>
+    </div>
+  </div>
+  <div data-view="favorites" class="view hidden">
+    <div class="container">
+      <div class="row">
+        <div class="column-full">
+          <div class="top-header">
+            <h2 class="title-entry-form">Favorites</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="no-favorites">No Favorites Available</div>
+
+      <div data-view="favorites" class="view hidden">
+        <div class="container">
+          <div class="card-container-favorites">
+            <!-- Recipe list items appended here -->
           </div>
         </div>
       </div>

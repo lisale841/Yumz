@@ -27,3 +27,9 @@
   flex-flow: row wrap;
   position: relative;
 }
+
+.card-container-favorites {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+}
