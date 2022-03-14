@@ -139,6 +139,15 @@ function getRecipe(event) {
     }
 
     data.currentRecipe = xhr.response;
+
+    const check = data.favorites.findIndex(element => element.id === data.currentRecipe.id);
+
+    if (check >= 0) {
+      $favoritesButton.className = 'button favorites-btn hidden';
+    } else {
+      $favoritesButton.className = 'button favorites-btn';
+    }
+
   });
   xhr.send();
 
