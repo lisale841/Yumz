@@ -118,7 +118,7 @@ h1 {
   overflow: hidden;
   display: inline-flex;
   margin-bottom: 10px;
-  height: 65px;
+  height: 90px;
   width: 100%;
   box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
@@ -126,6 +126,7 @@ h1 {
 .recipe-photo {
   width: 100px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .recipe-title {
@@ -195,11 +196,70 @@ li {
   align-self: center;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .open {
   display: block;
 }
 
-@media only screen and (min-width: 575px) {
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  border-radius: 4px;
+  text-align: center;
+  padding-bottom: 56px;
+  padding-top: 56px;
+}
+
+.modal-button-confirm {
+  background-color: #cc97d4;
+  cursor: pointer;
+  border: none;
+  padding: 6px;
+  padding-right: 12px;
+  padding-left: 12px;
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  float: right;
+}
+
+.modal-button-cancel {
+  background-color: grey;
+  cursor: pointer;
+  border: none;
+  padding: 6px;
+  padding-right: 12px;
+  padding-left: 12px;
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  float: left;
+}
+
+.recipe-trash {
+  align-self: center;
+  color: pink;
+  padding: 4px;
+  float: left;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
   .recipe-list {
     width: 24%;
     display: unset;
@@ -213,10 +273,12 @@ li {
   .recipe-photo {
     width: 114px;
     height: 70px;
+    cursor: pointer;
   }
 
   .recipe-title {
     width: unset;
+    display: flex;
   }
 
   .recipe-para {
@@ -224,6 +286,140 @@ li {
     color: #208bff;
     padding: unset;
     padding-left: 5px;
+  }
+
+  .recipe-trash {
+    align-self: center;
+    color: pink;
+    padding: 4px;
+    cursor: pointer;
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+    border-radius: 4px;
+    text-align: center;
+    padding-bottom: 56px;
+    padding-top: 56px;
+  }
+
+  .modal-button-confirm {
+    background-color: #cc97d4;
+    cursor: pointer;
+    border: none;
+    padding: 6px;
+    padding-right: 18px;
+    padding-left: 18px;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    float: right;
+  }
+
+  .modal-button-cancel {
+    background-color: grey;
+    cursor: pointer;
+    border: none;
+    padding: 6px;
+    padding-right: 18px;
+    padding-left: 18px;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    float: left;
+  }
+
+  h3 {
+    padding-left: 100px;
+  }
+
+  ul {
+    padding-left: 140px;
+    padding-right: 140px;
+  }
+
+  ol {
+    padding-left: 140px;
+    padding-right: 140px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .recipe-list {
+    width: 24%;
+    display: unset;
+    height: 120px;
+  }
+
+  .image-recipe {
+    width: 120px;
+  }
+
+  .recipe-photo {
+    width: 114px;
+    height: 70px;
+    cursor: pointer;
+  }
+
+  .recipe-title {
+    width: unset;
+    display: flex;
+  }
+
+  .recipe-para {
+    font-size: 10px;
+    color: #208bff;
+    padding: unset;
+    padding-left: 5px;
+  }
+
+  .recipe-trash {
+    align-self: center;
+    color: pink;
+    padding: 4px;
+    cursor: pointer;
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+    border-radius: 4px;
+    text-align: center;
+    padding-bottom: 56px;
+    padding-top: 56px;
+  }
+
+  .modal-button-confirm {
+    background-color: #cc97d4;
+    cursor: pointer;
+    border: none;
+    padding: 6px;
+    padding-right: 18px;
+    padding-left: 18px;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    float: right;
+  }
+
+  .modal-button-cancel {
+    background-color: grey;
+    cursor: pointer;
+    border: none;
+    padding: 6px;
+    padding-right: 18px;
+    padding-left: 18px;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    float: left;
   }
 
   h3 {
