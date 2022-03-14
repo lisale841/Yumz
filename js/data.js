@@ -3,8 +3,8 @@ var data = {
   view: 'search-page',
   favorites: [],
   currentRecipe: null,
-  editing: null
-
+  editing: null,
+  favToDelete: null
 };
 
 var previousdataJSON = localStorage.getItem('ajax-yumz-project');

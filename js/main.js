@@ -11,6 +11,9 @@ var $favoritesButton = document.querySelector('.favorites-btn');
 var $noFavorites = document.querySelector('.no-favorites');
 var $navItem = document.querySelector('.nav-item');
 var $cardContainerFavorites = document.querySelector('.card-container-favorites');
+var $modalCancelButton = document.querySelector('.modal-button-cancel');
+var $modalConfirmButton = document.querySelector('.modal-button-confirm');
+var $modal = document.querySelector('.modal');
 
 function homePage(event) {
   swapView(event);
@@ -53,7 +56,7 @@ function submitInput(event) {
 
 $submitButton.addEventListener('click', submitInput);
 
-function dataEntry(name, image, id) {
+function dataEntry(name, image, id, favorites = false) {
   var $recipeList = document.createElement('div');
   $recipeList.setAttribute('class', 'recipe-list');
   $recipeList.setAttribute('data-id', id);
@@ -77,10 +80,33 @@ function dataEntry(name, image, id) {
   $recipePara.textContent = name;
   $recipeTitle.appendChild($recipePara);
 
+  if (favorites) {
+    var $recipeTrash = document.createElement('i');
+    $recipeTrash.setAttribute('class', 'fas fa-trash recipe-trash');
+    $recipeTrash.setAttribute('data-delete', id);
+    $recipeTitle.appendChild($recipeTrash);
+  }
+
   return $recipeList;
 }
 
+function deleteFav() {
+  data.favorites = data.favorites.filter(fav => fav.id !== Number(data.favToDelete));
+
+  deleteLi($cardContainerFavorites);
+  favorites($cardContainerFavorites);
+
+  closedModal();
+}
+
+$modalConfirmButton.addEventListener('click', deleteFav);
+
 function getRecipe(event) {
+  if (event.target.dataset.delete) {
+    data.favToDelete = event.target.dataset.delete;
+    openModal();
+    return;
+  }
 
   deleteLi($recipeIngredients);
   deleteLi($recipeInstructions);
@@ -113,6 +139,15 @@ function getRecipe(event) {
     }
 
     data.currentRecipe = xhr.response;
+
+    const check = data.favorites.findIndex(element => element.id === data.currentRecipe.id);
+
+    if (check >= 0) {
+      $favoritesButton.className = 'button favorites-btn hidden';
+    } else {
+      $favoritesButton.className = 'button favorites-btn';
+    }
+
   });
   xhr.send();
 
@@ -171,8 +206,8 @@ function favorites(element) {
     var responseName = data.favorites[i].name;
     var imageUrl = data.favorites[i].thumbnail_url;
     var id = data.favorites[i].id;
-    var entry = dataEntry(responseName, imageUrl, id);
-    entry.addEventListener('click', getRecipe);
+    var entry = dataEntry(responseName, imageUrl, id, true);
+    entry.addEventListener('click', getRecipe); // check this
     element.appendChild(entry);
   }
 }
@@ -208,4 +243,18 @@ function onLoad() {
   }
   swapView();
 }
+
+function openModal(event) {
+
+  $modal.className = 'modal open';
+  swapView(event);
+}
+
+function closedModal(event) {
+
+  $modal.className = 'modal';
+  data.favToDelete = null;
+}
+
+$modalCancelButton.addEventListener('click', closedModal);
 window.addEventListener('DOMContentLoaded', onLoad);
