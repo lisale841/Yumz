@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/spinner.css">
 </head>
 
 <body>
@@ -78,6 +79,10 @@
 
       <div data-view="recipes" class="view hidden">
         <div class="container">
+          <div class="network-error hidden">
+            <span>Sorry, there was an error connecting to the network! <br /> Please check your internet connection and try
+              again.</span>
+          </div>
           <div class="card-container">
             <!-- Recipe list items appended here -->
           </div>
@@ -87,6 +92,10 @@
   </div>
   <div data-view="recipe-details" class="view hidden">
     <div class="container">
+      <div class="network-error hidden">
+        <span>Sorry, there was an error connecting to the network! <br /> Please check your internet connection and try
+          again.</span>
+      </div>
       <div class="recipe-details-container">
         <div class="row">
           <div class="column-full">
@@ -148,7 +157,22 @@
       </div>
     </div>
   </div>
-
+  <div class="spinner-container hidden">
+    <div class="lds-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
 
   <main>
   </main>
