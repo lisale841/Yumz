@@ -33,3 +33,10 @@
   flex-flow: row wrap;
   position: relative;
 }
+
+.footer {
+  font-size: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

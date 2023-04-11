@@ -40,27 +40,31 @@
   <div class="view" data-view="search-page">
     <div class="heading-background">
       <div class="container">
-        <div class="row">
-          <div class="column-full">
-            <div class="top-header">
-              <h2 class="search-page-text">What do you want
+        <div class="search-container">
+          <div class="search-position">
+            <div class="row">
+              <div class="column-full">
+                <div class="top-header">
+                  <h2 class="search-page-text">What do you want
                 to make today?</h2>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column-full">
-            <div class="search-box">
-              <label for="search-text"></label>
+            <div class="row">
+              <div class="column-full">
+                <div class="search-box">
+                  <label for="search-text"></label>
+                </div>
+                <div class="search-box-input">
+                  <input required name="search-box-input" type="text" id="search-text" />
+                </div>
+              </div>
             </div>
-            <div class="search-box-input">
-              <input required name="search-box-input" type="text" id="search-text" />
+            <div class="row">
+              <div class="column-full">
+                <button type="submit" class="button submit-btn" data-view="recipes">SUBMIT</button>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column-full">
-            <button type="submit" class="button submit-btn" data-view="recipes">SUBMIT</button>
           </div>
         </div>
       </div>
@@ -173,9 +177,14 @@
       <div></div>
     </div>
   </div>
-
+  <div class="footer">
+    <a
+    href="https://www.freepik.com/free-vector/hand-drawn-international-food-watercolor-style_2799463.htm#query=food%20illustration&position=0&from_view=keyword&track=ais">Image
+    by rawpixel.com</a> on Freepik
+  </div>
   <main>
   </main>
+
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
