@@ -88,6 +88,7 @@ label {
 
 .logo {
   width: 100%;
+  height: 100%;
   cursor: pointer;
 }
 
@@ -193,18 +194,23 @@ li {
 
 .nav-bar {
   display: flex;
-  width: 80px;
+  flex-wrap: wrap;
   font-family: Nosifer, cursive;
-  height: 50px;
+  justify-content: space-between;
+}
+
+.logo-header {
+  width: 60px;
 }
 
 .nav-bar .nav-item {
   cursor: pointer;
-  font-size: 14px;
-  align-self: end;
+  font-size: 15px;
+
+  /* align-self: end; */
   font-family: Roboto, sans-serif;
-  margin: 10px;
-  margin-left: 75px;
+  margin-top: 20px;
+  color: black;
 }
 
 .title-entry-form {
@@ -281,6 +287,17 @@ li {
   padding: 4px;
   float: left;
   cursor: pointer;
+}
+
+@media screen and (max-height: 400px) {
+  .search-container {
+    background: #f3f3f1;
+    border: double;
+    margin: auto;
+    width: 360px;
+    height: 250px;
+    position: relative;
+  }
 }
 
 @media screen and (min-width: 768px) {
