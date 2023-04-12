@@ -204,6 +204,10 @@ li {
   margin-left: 75px;
 }
 
+.title-entry-form {
+  margin: 25px 0;
+}
+
 .top-header {
   display: flex;
   justify-content: space-between;
