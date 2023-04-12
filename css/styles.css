@@ -330,7 +330,7 @@ li {
   }
 
   .recipe-trash {
-    align-self: center;
+    align-self: flex-start;
     color: black;
     padding: 4px;
     cursor: pointer;
@@ -341,7 +341,7 @@ li {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 25%;
+    width: 50%;
     border-radius: 4px;
     text-align: center;
     padding-bottom: 56px;

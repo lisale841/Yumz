@@ -122,6 +122,7 @@ function getRecipe(event) {
   if (event.target.dataset.delete) {
     data.favToDelete = event.target.dataset.delete;
     openModal();
+    $recipeSpinner.className = 'spinner-container hidden';
     return;
   }
 
