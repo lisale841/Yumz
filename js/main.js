@@ -112,6 +112,7 @@ function deleteFav() {
   favorites($cardContainerFavorites);
 
   closedModal();
+  checkFavorites();
 }
 
 $modalConfirmButton.addEventListener('click', deleteFav);
@@ -236,6 +237,12 @@ function favorites(element) {
     var entry = dataEntry(responseName, imageUrl, id, true);
     entry.addEventListener('click', getRecipe); // check this
     element.appendChild(entry);
+  }
+}
+
+function checkFavorites() {
+  if (data.favorites.length <= 0) {
+    $noFavorites.className = 'no-favorites';
   }
 }
 
