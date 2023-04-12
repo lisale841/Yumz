@@ -10,7 +10,7 @@ A web application for homechefs who want to find quick and easy recipes.
 - Tasty Api using XMLHttpRequest
 
 ## Live Demo
-[Try Yumz Live](https://lisale841.github.io/ajax-project/)
+[Try Yumz Live](https://lisale841.github.io/Yumz/)
 
 ## Features
 
