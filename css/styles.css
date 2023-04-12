@@ -206,12 +206,13 @@ li {
 
 .nav-bar .nav-item {
   cursor: pointer;
-  font-size: 15px;
+  font-size: 13px;
 
   /* align-self: end; */
-  font-family: Roboto, sans-serif;
+  font-family: Raleway, sans-serif;
   margin-top: 20px;
   color: black;
+  font-weight: 600;
 }
 
 .title-entry-form {
