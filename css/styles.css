@@ -94,6 +94,7 @@ label {
 .image-recipe {
   height: 100%;
   width: 90px;
+  object-fit: cover;
 }
 
 input {
