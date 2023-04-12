@@ -14,6 +14,7 @@ body {
   margin: auto;
   width: 360px;
   height: 250px;
+  border-radius: 10px;
 }
 
 .search-position {
@@ -109,7 +110,7 @@ input {
 
 input:focus {
   outline: none;
-  border: solid #562b81 2px;
+  border: solid #97b900 2px;
 }
 
 h1 {
