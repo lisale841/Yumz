@@ -13,11 +13,11 @@ body {
   top: 0;
   margin: auto;
   width: 360px;
-  height: 270px;
+  height: 250px;
 }
 
 .search-position {
-  padding: 20px;
+  padding: 14px;
 }
 
 .heading-background {
@@ -192,7 +192,7 @@ li {
   display: flex;
   width: 80px;
   font-family: Nosifer, cursive;
-  height: 70px;
+  height: 50px;
 }
 
 .nav-bar .nav-item {
