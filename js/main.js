@@ -192,15 +192,10 @@ function deleteLi(elementParent) {
 }
 
 function addIngredients(elementParent) {
-  // for (var i = 0; i <= data.currentRecipe.sections[0].components.length - 1; i++) {
-  //   var $li = document.createElement('li');
-  //   $li.textContent = data.currentRecipe.sections[0].components[i].raw_text;
-  //   elementParent.appendChild($li);
-  // }
   for (var j = 0; j <= data.currentRecipe.sections.length - 1; j++) {
     for (var i = 0; i <= data.currentRecipe.sections[j].components.length - 1; i++) {
       var $li = document.createElement('li');
-      $li.textContent = data.currentRecipe.sections[0].components[i].raw_text;
+      $li.textContent = data.currentRecipe.sections[j].components[i].raw_text;
       $recipeIngredients.appendChild($li);
     }
   }
