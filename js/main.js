@@ -149,11 +149,14 @@ function getRecipe(event) {
       $recipeTitle.textContent = xhr.response.name;
       $recipeImage.setAttribute('src', xhr.response.thumbnail_url);
 
-      for (var i = 0; i <= xhr.response.sections[0].components.length - 1; i++) {
-        var $li = document.createElement('li');
-        $li.textContent = xhr.response.sections[0].components[i].raw_text;
-        $recipeIngredients.appendChild($li);
+      for (var j = 0; j <= xhr.response.sections.length - 1; j++) {
+        for (var i = 0; i <= xhr.response.sections[j].components.length - 1; i++) {
+          var $li = document.createElement('li');
+          $li.textContent = xhr.response.sections[j].components[i].raw_text;
+          $recipeIngredients.appendChild($li);
+        }
       }
+
       for (var k = 0; k <= xhr.response.instructions.length - 1; k++) {
         var $instructions = document.createElement('li');
         $instructions.textContent = xhr.response.instructions[k].display_text;
@@ -189,10 +192,17 @@ function deleteLi(elementParent) {
 }
 
 function addIngredients(elementParent) {
-  for (var i = 0; i <= data.currentRecipe.sections[0].components.length - 1; i++) {
-    var $li = document.createElement('li');
-    $li.textContent = data.currentRecipe.sections[0].components[i].raw_text;
-    elementParent.appendChild($li);
+  // for (var i = 0; i <= data.currentRecipe.sections[0].components.length - 1; i++) {
+  //   var $li = document.createElement('li');
+  //   $li.textContent = data.currentRecipe.sections[0].components[i].raw_text;
+  //   elementParent.appendChild($li);
+  // }
+  for (var j = 0; j <= data.currentRecipe.sections.length - 1; j++) {
+    for (var i = 0; i <= data.currentRecipe.sections[j].components.length - 1; i++) {
+      var $li = document.createElement('li');
+      $li.textContent = data.currentRecipe.sections[0].components[i].raw_text;
+      $recipeIngredients.appendChild($li);
+    }
   }
 }
 
